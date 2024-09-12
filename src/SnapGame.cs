@@ -4,20 +4,7 @@ using CardGames.GameLogic;
 
 namespace CardGames
 {
-    public class SnapGame
-    {
-        public static void LoadResources()
-        {
-            Bitmap cards;
-            cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
-            SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53);      // set the cells in the bitmap to match the cards
-        }
-
-		/// <summary>
-		/// Respond to the user input -- with requests affecting myGame
-		/// </summary>
-		/// <param name="myGame">The game object to update in response to events.</param>
-		private static void HandleUserInput(Snap myGame)
+    private static void HandleUserInput(Snap myGame)
 		{
 			//Fetch the next batch of UI interaction
 			SwinGame.ProcessEvents();
@@ -66,6 +53,20 @@ namespace CardGames
 			myGame.Update(); // just ask the game to do this...
 		}
 
+	public class SnapGame
+    {
+        public static void LoadResources()
+        {
+            Bitmap cards;
+            cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
+            SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53);      // set the cells in the bitmap to match the cards
+        }
+
+		/// <summary>
+		/// Respond to the user input -- with requests affecting myGame
+		/// </summary>
+		/// <param name="myGame">The game object to update in response to events.</param>
+		
         public static void Main()
         {
             //Open the game window
